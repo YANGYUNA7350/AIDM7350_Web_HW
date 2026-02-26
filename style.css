@@ -1,0 +1,38 @@
+/* 全局样式：页面字体、边距、背景色 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f8f8;
+}
+/* 主标题：红色+居中，突出显示 */
+h1 {
+    color: #e74c3c;
+    text-align: center;
+    font-size: 32px;
+}
+/* 二级/三级标题：深蓝色，区分层级 */
+h2, h3 {
+    color: #2c3e50;
+    margin-top: 20px;
+}
+/* 段落：字体大小、行高，阅读更舒适 */
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+/* 列表：缩进+行高，排版整齐 */
+ul {
+    line-height: 1.8;
+    margin-left: 20px;
+    color: #555;
+}
+/* 超链接：蓝色无下划线，鼠标悬停变红色+下划线（交互效果） */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
