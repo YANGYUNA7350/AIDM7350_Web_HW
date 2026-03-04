@@ -1,38 +1,177 @@
-/* 全局样式：页面字体、边距、背景色 */
+/* 全局样式重置+基础设置，保证跨浏览器兼容 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* 页面背景色，浅灰色提升视觉舒适度 */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f8f8f8;
-}
-/* 主标题：红色+居中，突出显示 */
-h1 {
-    color: #e74c3c;
-    text-align: center;
-    font-size: 32px;
-}
-/* 二级/三级标题：深蓝色，区分层级 */
-h2, h3 {
-    color: #2c3e50;
-    margin-top: 20px;
-}
-/* 段落：字体大小、行高，阅读更舒适 */
-p {
-    font-size: 16px;
-    line-height: 1.7;
+    background-color: #f5f7fa;
     color: #333;
+    line-height: 1.6;
+    padding-bottom: 40px;
 }
-/* 列表：缩进+行高，排版整齐 */
-ul {
-    line-height: 1.8;
-    margin-left: 20px;
-    color: #555;
+
+/* 头部样式：浸会蓝主色，白色文字，居中布局 */
+.page-header {
+    background-color: #003366; /* 浸会大学官方蓝 */
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-/* 超链接：蓝色无下划线，鼠标悬停变红色+下划线（交互效果） */
-a {
-    color: #3498db;
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* 手机端自动换行 */
+}
+
+/* 浸会校徽样式，适配大小 */
+.hkbu-logo {
+    width: 80px;
+    height: auto;
+}
+
+.header-text h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* 主体内容容器：居中，限制宽度，适配不同设备 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; /* 板块之间的间距 */
+}
+
+/* 卡片通用样式：白色背景，圆角，阴影，内边距，提升外观 */
+.card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 卡片悬浮交互：轻微上移+加深阴影，提升创意和交互性 */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 板块标题样式：浸会金辅助色，底部边框，突出层级 */
+.card h2 {
+    color: #D4AF37; /* 浸会大学官方金 */
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* 课程大纲列表样式 */
+.syllabus-list {
+    list-style-position: inside;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.syllabus-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+/* 知识点卡片布局 */
+.knowledge-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.knowledge-item {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.knowledge-item h3 {
+    color: #003366;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+/* 学习工具链接样式 */
+.tools-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tools-list a {
+    color: #003366;
+    font-size: 16px;
     text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #003366;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
-a:hover {
-    color: #e74c3c;
-    text-decoration: underline;
+
+/* 工具链接悬浮效果：背景变蓝，文字变白 */
+.tools-list a:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+/* 资源链接样式 */
+.link-item {
+    display: block;
+    color: #003366;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    transition: color 0.3s ease;
+}
+
+.link-item:hover {
+    color: #D4AF37;
+}
+
+/* 页脚样式：居中，浅灰背景，浸会蓝文字 */
+.page-footer {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+    color: #003366;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+}
+
+/* 响应式适配：手机端字体/间距调整 */
+@media (max-width: 768px) {
+    .header-text h1 {
+        font-size: 24px;
+    }
+    .card h2 {
+        font-size: 20px;
+    }
+    .main-content {
+        grid-template-columns: 1fr;
+    }
 }
